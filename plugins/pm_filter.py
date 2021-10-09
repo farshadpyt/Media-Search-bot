@@ -30,7 +30,7 @@ async def filter(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🍿 Join Series Channel ", url='https://t.me/TVseriesLand4U')
+                            InlineKeyboardButton("🍿 Join Series Channel ", url='https://t.me/moviesupdateck')
                         ]
                     ]
                 ),
@@ -276,19 +276,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton(' MYdev👩‍💻', url='https://t.me/Physic_hybrid'),
-                    InlineKeyboardButton('Group🍿', url='https://t.me/SeriesLandChat')
+                    InlineKeyboardButton(' MYdev👩‍💻', url='https://t.me/farshadck'),
+                    InlineKeyboardButton('Group🍿', url='https://t.me/cinemakodathi')
                 ]
                 ]
             await query.message.edit(text = """🙋🏻‍♂️   Hellooo    <code> {}🤓</code>
     
 <b>○ My Name :</b> <code>Movie Searching Bot</code>
-<b>○ Creator :</b> <a href="https://t.me/Physic_hybrid">Physic_Hybrid🇵🇹</a>
+<b>○ Creator :</b> <a href="https://t.me/farshadck">Muhammed farshad🇵🇹</a>
 <b>○ Credits :</b> <code>Everyone in this journey</code>
 <b>○ Language :</b> <code>Python3</code>
 <b>○ Library :</b> <a href="https://docs.pyrogram.org/">Pyrogram asyncio 0.17.1</a>
 <b>○ Supported Site :</b> <a href="https://my.telegram.org/">Only Telegram</a>
-<b>○ Source Code :</b> <a href="https://t.me/AdhavaaBiriyaniKittiyalo">👉 Click Here</a>
+<b>○ Source Code :</b> <a href="https://t.me/botupdatechannelfarshad">👉 Click Here</a>
 <b>○ Server :</b> <a href="https://herokuapp.com/">Heroku</a>
 <b>○ Database :</b> <a href="https://www.mongodb.com/">MongoDB</a>
 <b>○ Build Status :</b> <code>V2.1 [BETA]</code>
@@ -313,8 +313,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🍿Group', url='https://t.me/SeriesLandChat'),
-                        InlineKeyboardButton('🎥Channel', url='https://t.me/TVseriesLand4U')
+                        InlineKeyboardButton('🍿Group', url='https://t.me/cinemakodathi'),
+                        InlineKeyboardButton('🎥Channel', url='https://t.me/malayalammovielatest1')
                     ]
                     ]
                 
@@ -345,8 +345,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🍿Group', url='https://t.me/SeriesLandChat'),
-                        InlineKeyboardButton('🎥 Channel', url='https://t.me/TVseriesLand4U')
+                        InlineKeyboardButton('🍿Group', url='https://t.me/cinemakodathi'),
+                        InlineKeyboardButton('🎥 Channel', url='https://t.me/malayalammovielatest1')
                     ]
                     ]
                 
