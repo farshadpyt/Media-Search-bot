@@ -104,7 +104,6 @@ async def start(bot, cmd):
                     ],
                     [
                         InlineKeyboardButton("About😎", callback_data="about")
-                        InlineKeyboardButton("Mydev🧑‍💻", url="https://t.me/farshadck")
                     ]
                 ]
             )
