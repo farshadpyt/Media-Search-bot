@@ -99,12 +99,21 @@ async def start(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
+                        
+                        InlineKeyboardButton("❔HOW TO USE ME❔", url="https://t.me/botupdatechannelfarshad/56")
+                    ],
+                    [
                         InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
                         InlineKeyboardButton("Group🍿", url="https://t.me/cinemakodathi")
                     ],
                     [
                         InlineKeyboardButton("About", callback_data="about")
-                    ]
+                        InlineKeyboardButton("MYdev🧑‍💻", url="https://t.me/farshadck")
+                    ],
+                    [
+                        InlineKeyboardButton("➕Add Me To Your Group", url="https://t.me/farshad555_bot?startgroup=true")             
+                    
+                   ]
                 ]
             )
         )
@@ -192,8 +201,8 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('Source Code', url='https://github.com/subinps/Media-Search-bot')
+            InlineKeyboardButton('Update Channel', url='https://t.me/botupdatechannelfarshad'),
+            InlineKeyboardButton('Source Code', url='https://t.me/botupdatechannelfarshad')
         ]
         ]
     await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/subin_works'>XTZ Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
