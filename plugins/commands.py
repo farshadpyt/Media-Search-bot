@@ -100,19 +100,12 @@ async def start(bot, cmd):
                 [
                     [
                         
-                        InlineKeyboardButton("❔HOW TO USE ME❔", url="https://t.me/botupdatechannelfarshad/56")
-                    ],
-                    [
                         InlineKeyboardButton("Search Here", switch_inline_query_current_chat=''),
                         InlineKeyboardButton("Group🍿", url="https://t.me/cinemakodathi")
                     ],
                     [
                         InlineKeyboardButton("About", callback_data="about")
                         InlineKeyboardButton("MYdev🧑‍💻", url="https://t.me/farshadck")
-                    ],
-                    [
-                        InlineKeyboardButton("➕Add Me To Your Group", url="https://t.me/farshad555_bot?startgroup=true")             
-                    
                     ]
                 ]
             )
