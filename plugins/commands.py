@@ -3,7 +3,7 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
-from utils import Media, get_file_details
+from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
@@ -27,11 +27,11 @@ async def start(bot, cmd):
                 ident, file_id = cmd.text.split("_-_-_-_")
                 await bot.send_message(
                     chat_id=cmd.from_user.id,
-                    text="**Hey..Bruh🙋‍♂️..Please Join My Updates Channel to use this Bot!**",
+                    text="**Please Join My Updates Channel to use this Bot!**",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🍿 Join Series Channel ", url='https://t.me/TVseriesLand4U')
+                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
                             ],
                             [
                                 InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{file_id}")
@@ -54,7 +54,7 @@ async def start(bot, cmd):
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 title = files.file_name
-                size=files.file_size
+                size=get_size(files.file_size)
                 f_caption=files.caption
                 if CUSTOM_FILE_CAPTION:
                     try:
@@ -66,8 +66,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again🔎', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('🍿Group', url='https://t.me/SeriesLandChat')
+                        InlineKeyboardButton('Search again🔍', switch_inline_query_current_chat=''),
+                        InlineKeyboardButton('Group🍿', url='https://t.me/cinemakodathi')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -82,32 +82,29 @@ async def start(bot, cmd):
         invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="**Hey..Bruh🙋‍♂️...Please Join My Updates Channel to use this Bot!**",
+            text="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🍿 Join Series Chanel ", url='https://t.me/TVseriesLand4U')
+                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
                     ]
                 ]
             )
         )
     else:
-        await cmd.reply_photo(
-            photo="https://telegra.ph/file/bc0c97a91d28a93c8c4fe.jpg",
-            caption=f"𝐘𝐨..𝐘𝐨..{cmd.from_user.mention} 🙋, 𝐈'𝐦 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐌𝐞𝐝𝐢𝐚 𝐒𝐞𝐚𝐫𝐜𝐡 𝐁𝐨𝐭 𝐨𝐫 𝐲𝐨𝐮 𝐜𝐚𝐧 𝐜𝐚𝐥𝐥 𝐦𝐞 𝐚𝐬 𝐀𝐮𝐭𝐨-𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭\n\n𝐇𝐞𝐫𝐞 𝐲𝐨𝐮 𝐜𝐚𝐧 𝐬𝐞𝐚𝐫𝐜𝐡 𝐟𝐢𝐥𝐞𝐬 𝐢𝐧 𝐈𝐧𝐥𝐢𝐧𝐞 𝐦𝐨𝐝𝐞 𝐚𝐬 𝐰𝐞𝐥𝐥 𝐚𝐬 𝐏𝐌, 𝐔𝐬𝐞 𝐭𝐡𝐞 𝐛𝐞𝐥𝐨𝐰 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐬𝐞𝐚𝐫𝐜𝐡 𝐟𝐢𝐥𝐞𝐬 𝐨𝐫 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐭𝐡𝐞 𝐧𝐚𝐦𝐞 𝐨𝐟 𝐟𝐢𝐥𝐞 𝐭𝐨 𝐬𝐞𝐚𝐫𝐜𝐡\n©️MᴀɪɴᴛᴀɪɴᴇD Bʏ  <a href=tg://user?id=633942759>ᴘʜʏsɪᴄ_ʜʏʙʀɪᴅ🇵🇹/🇦🇪</a>",
+        await cmd.reply_text(
+            START_MSG,
+            parse_mode="Markdown",
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('❔ How To Use Me ❔', url='https://t.me/joinchat/s3ux_FYag2BmYzRk')
-                    ],[                    
-                        InlineKeyboardButton("Search Here🔎", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("Group 🍿", url="https://t.me/SeriesLandChat")
+                        InlineKeyboardButton("Search Here🔍", switch_inline_query_current_chat=''),
+                        InlineKeyboardButton("Join Group🍿", url="https://t.me/cinemakodathi")
                     ],
                     [
-                        InlineKeyboardButton('MYdev👩‍💻', url='https://t.me/Physic_hybrid'),
                         InlineKeyboardButton("About😎", callback_data="about")
-                    ],
-                    [   InlineKeyboardButton('➕ Add Me To Your Group ', url='https://t.me/TGMovieRobot?startgroup=true'),]
+                    ]
                 ]
             )
         )
@@ -195,20 +192,8 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Channel🎥', url='https://t.me/TVseriesLand4U'),
-            InlineKeyboardButton('Group 🍿', url='https://t.me/SeriesLandChat')
+            InlineKeyboardButton('💢Update Channel💢', url='https://t.me/botupdatechannelfarshad'),
+            InlineKeyboardButton('😂Source Code😂', url='https://t.me/botupdatechannelfarshad')
         ]
         ]
-    await message.reply(text = """🙋🏻‍♂️   Hellooo    <code> {}🤓</code>
-    
-<b>  My Name :</b> <code>Movie Searching Bot</code>
-<b>  Creator :</b> <a href="https://t.me/Physic_hybrid">Physic_Hybrid🇵🇹</a>
-<b>  Credits :</b> <code>Everyone in this journey</code>
-<b>  Language :</b> <code>Python3</code>
-<b>  Library :</b> <a href="https://docs.pyrogram.org/">Pyrogram asyncio 0.17.1</a>
-<b>  Supported Site :</b> <a href="https://my.telegram.org/">Only Telegram</a>
-<b>  Source Code :</b> <a href="https://t.me/AdhavaaBiriyaniKittiyalo">👉 Click Here</a>
-<b>  Server :</b> <a href="https://herokuapp.com/">Heroku</a>
-<b>  Database :</b> <a href="https://www.mongodb.com/">MongoDB</a>
-<b>  Build Status :</b> <code>V2.1 [BETA]</code>
-<b>📜 Quote :</b> <code>ആരും പേടിക്കണ്ട എല്ലാവർക്കും
+    await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/subinps/Media-Search-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/subin_works'>XTZ Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
