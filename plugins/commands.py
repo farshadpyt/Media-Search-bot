@@ -99,7 +99,9 @@ async def start(bot, cmd):
                 [
                     [
                         InlineKeyboardButton('❔ How To Use Me ❔', url='https://t.me/botupdatechannelfarshad/56')
-                    ],[                    
+                  ],[                    
+                        InlineKeyboardButton('Share Me🤝', url='https://t.me/share/url?url=https://t.me/farshad555_bot')
+                  ],[
                         InlineKeyboardButton("Search Here🔎", switch_inline_query_current_chat=''),
                         InlineKeyboardButton("Group 🍿", url="https://t.me/cinemakodathi")
                     ],
