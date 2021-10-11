@@ -108,6 +108,8 @@ async def start(bot, cmd):
                     [
                         InlineKeyboardButton('MYdev👩‍💻', url='https://t.me/farshadck'),
                         InlineKeyboardButton("About😎", callback_data="about")
+                  ],[
+                        InlineKeyboardButton('Follow Me Instagram🤘', url='https://instagram.com/_far.shad__?utm_medium=copy_link')
                     ],
                     [   InlineKeyboardButton('➕ Add Me To Your Group ➕', url='https://t.me/farshad555_bot?startgroup=true'),]
                 ]
@@ -193,7 +195,7 @@ async def delete(bot, message):
         await msg.edit('File is successfully deleted from database')
     else:
         await msg.edit('File not found in database')
-@Client.on_message(filters.command('about'))
+@Client.on_message(filters.command('detaile'))
 async def bot_info(bot, message):
     buttons = [
         [
