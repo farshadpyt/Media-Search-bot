@@ -196,16 +196,6 @@ async def delete(bot, message):
     else:
         await msg.edit('File not found in database')
 
-@Client.on_message(filters.private & filters.command("broadcast"))
-async def broadcast_handler_open(_, m):
-    if m.from_user.id not in ADMINS:
-        await m.delete()
-        return
-    if m.reply_to_message is None:
-        await m.delete()
-    else:
-        await broadcast(m, db)
-
 
 @Client.on_message(filters.command('detaile'))
 async def bot_info(bot, message):
