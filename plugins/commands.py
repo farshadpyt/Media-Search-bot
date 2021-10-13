@@ -169,7 +169,7 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-@trojanz.on_message(filters.command('info') & (filters.private | filters.group))
+@Client.on_message(filters.command('info') & (filters.private | filters.group))
 async def showinfo(client, message):
     try:
         cmd, id = message.text.split(" ", 1)
