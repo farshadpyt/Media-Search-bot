@@ -204,7 +204,7 @@ async def bot_info(bot, message):
             InlineKeyboardButton('💢Update Channel💢', url='https://t.me/botupdatechannelfarshad'),
             InlineKeyboardButton('😂Source Code😂', url='https://t.me/botupdatechannelfarshad')
         ],[
-            InlineKeyboardButton('Home ⚡', callback_data='start'),
+            InlineKeyboardButton('Home ⚡', callback_data="start_data"),
         ]
         ]
     await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://t.me/botupdatechannelfarshad'>Click here</a>\nUpdate Channel : <a href='https://t.me/botupdatechannelfarshad'>FARSHAD Bots</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
