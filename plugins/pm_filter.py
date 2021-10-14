@@ -281,7 +281,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton(' MYdev👩‍💻', url='https://t.me/farshadck'),
                     InlineKeyboardButton('Group🍿', url='https://t.me/cinemakodathi')
                 ],[ 
-                    InlineKeyboardButton('Back🔙', callback_data='start'),
+                    InlineKeyboardButton('Back🔙', url='https://t.me/farshad555_bot?start=get-2054'),
                 ]
                 ]
             await query.message.edit(text = """🙋🏻‍♂️   Hellooo    <code> {}🤓</code>
