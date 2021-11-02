@@ -97,7 +97,6 @@ async def start(bot, cmd):
             caption=script.START_MSG.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='Markdown'
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
